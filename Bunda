@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Ulang Tahun, Sayang!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7e7ce;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #e91e63;
+            font-size: 3em;
+        }
+        p {
+            font-size: 1.5em;
+        }
+        .heart {
+            color: #e91e63;
+            font-size: 2em;
+        }
+        .message {
+            margin-top: 30px;
+            font-style: italic;
+        }
+        .footer {
+            margin-top: 50px;
+            font-size: 1.2em;
+        }
+        button, input[type="text"] {
+            background-color: #e91e63;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover, input[type="text"]:hover {
+            background-color: #d81b60;
+        }
+        .hidden-message {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.3em;
+            color: #e91e63;
+        }
+        .input-section {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Selamat Ulang Tahun, Sayang!</h1>
+    <p class="heart">❤️❤️❤️</p>
+    <p>Di hari istimewa ini, aku ingin mengingatkan betapa berharganya dirimu dalam hidupku.</p>
+    <p>Setiap detik bersamamu adalah anugerah, dan aku bersyukur bisa melewati waktu bersamamu.</p>
+    <p class="message">Semoga semua impianmu terwujud dan kita selalu bersama dalam kebahagiaan.</p>
+
+    <div class="input-section">
+        <p>Masukkan namamu:</p>
+        <input type="text" id="nameInput" placeholder="Nama">
+        <button onclick="showMessage()">Tampilkan Pesan</button>
+    </div>
+
+    <div class="input-section">
+        <p>Apakah kamu mencintaiku?</p>
+        <button onclick="showYesMessage()">Ya</button>
+        <button onclick="showNoMessage()">Tidak</button>
+    </div>
+
+    <div class="hidden-message" id="hiddenMessage"></div>
+
+    <div class="footer">
+        <p>Dengan penuh cinta,</p>
+        <p>Dedek</p>
+    </div>
+
+    <script>
+        function showMessage() {
+            var name = document.getElementById("nameInput").value;
+            var messageDiv = document.getElementById("hiddenMessage");
+
+            if (name) {
+                messageDiv.innerHTML = `<p>Selamat ulang tahun, ${name}! Terima kasih sudah menjadi yang terbaik dalam hidupku. Aku mencintaimu lebih dari yang bisa diungkapkan dengan kata-kata. 🎂💖</p>`;
+            } else {
+                messageDiv.innerHTML = "<p>Mohon masukkan namamu terlebih dahulu.</p>";
+            }
+
+            messageDiv.style.display = "block";
+        }
+
+        function showYesMessage() {
+            var messageDiv = document.getElementById("hiddenMessage");
+            messageDiv.innerHTML = "<p>Terima kasih, Sayang! Aku juga sangat mencintaimu! 💖</p>";
+            messageDiv.style.display = "block";
+        }
+
+        function showNoMessage() {
+            var messageDiv = document.getElementById("hiddenMessage");
+            messageDiv.innerHTML = "<p>Oh tidak, aku akan mencoba lebih baik lagi! 😢</p>";
+            messageDiv.style.display = "block";
+        }
+    </script>
+</body>
+</html>
